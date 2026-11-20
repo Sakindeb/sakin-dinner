@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sakin’s Graduation and 23rd Birthday Dinner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1C3738;--surface:#26494A;--ink:#F3EEE2;--muted:#8AA29E;--accent:#F6AE2D;--ochre:#F6AE2D;--olive:#8AA29E;--mauve:#8C5F66;--on-accent:#2F0601;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+
+
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'DM Sans',system-ui,sans-serif;line-height:1.5}
+.wrap{max-width:760px;margin:0 auto;padding:40px 20px 64px;display:flex;flex-direction:column;gap:32px}
+.eyebrow{font-size:13px;letter-spacing:.28em;font-weight:700;color:var(--accent)}
+h1{font-family:'Fraunces',Georgia,serif;font-weight:700;font-size:clamp(40px,9vw,68px);line-height:1.03;margin:8px 0 6px}
+.guest{font-size:18px;margin:14px 0 0;color:var(--ink)}
+.host{font-family:'Fraunces',Georgia,serif;font-size:22px;color:var(--olive);margin:0}
+.map{position:relative;border:3px solid var(--ink);background:var(--surface);overflow:hidden;aspect-ratio:16/10}
+.map svg{position:absolute;inset:0;width:100%;height:100%}
+.tag{position:absolute;left:50%;top:62%;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 18px;text-align:center;white-space:nowrap}
+.tag b{font-family:'Fraunces',Georgia,serif;font-size:clamp(18px,4vw,24px);display:block}
+.tag span{font-size:12px;letter-spacing:.25em}
+.count{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;text-align:center}
+.count div{border:3px solid var(--ink);padding:14px 4px}
+.count b{display:block;font-family:'Fraunces',Georgia,serif;font-size:clamp(28px,7vw,44px);line-height:1}
+.count span{font-size:12px;letter-spacing:.2em;color:var(--muted)}
+.legend{border:3px solid var(--ink);padding:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.legend h2,.rsvp h2{grid-column:1/-1;margin:0;font-size:13px;letter-spacing:.28em;color:var(--accent)}
+.row{display:flex;gap:12px;align-items:center}
+.dot{width:20px;height:20px;border-radius:50%;flex:none}
+.row small{display:block;font-weight:700}
+.row p{margin:0;font-family:'Fraunces',Georgia,serif;font-size:21px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+a.btn,button{font:inherit;font-weight:700;min-height:48px;padding:12px 22px;border:3px solid var(--accent);background:var(--accent);color:var(--on-accent);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center}
+a.btn.alt,button.alt{background:transparent;color:var(--ink);border-color:var(--ink)}
+.rsvp{border:3px solid var(--ink);padding:22px;display:flex;flex-direction:column;gap:14px;background:var(--surface)}
+label{font-weight:700;font-size:14px}
+input[type=text],input[type=number],textarea{font:inherit;width:100%;min-height:48px;padding:10px 12px;border:3px solid var(--ink);background:var(--bg);color:var(--ink)}
+.choice{display:flex;gap:10px;flex-wrap:wrap}
+.choice button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+#done{font-family:'Fraunces',Georgia,serif;font-size:24px;margin:0}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<main class="wrap">
+<header>
+<div class="eyebrow">TO A PERSON OF RARE TASTE AND IMPECCABLE JUDGMENT: YOU ARE INVITED TO MY GRADUATION AND 23RD BIRTHDAY</div>
+<h1>Two celebrations, one night.</h1>
+<p class="host">Efficiency is also on my CV.</p>
+
+</header>
+
+<section class="map" aria-label="Map showing the venue">
+<svg viewBox="0 0 760 475" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<g fill="none" stroke="var(--ochre)" stroke-width="1.6" opacity=".7">
+<ellipse cx="400" cy="230" rx="330" ry="190" transform="rotate(-14 400 230)"/>
+<ellipse cx="400" cy="230" rx="260" ry="145" transform="rotate(-14 400 230)"/>
+<ellipse cx="400" cy="230" rx="190" ry="100" transform="rotate(-14 400 230)"/>
+<ellipse cx="400" cy="230" rx="120" ry="58" transform="rotate(-14 400 230)"/>
+</g>
+<g fill="none" stroke="var(--olive)" stroke-width="1.2" opacity=".55">
+<ellipse cx="90" cy="410" rx="110" ry="60" transform="rotate(20 90 410)"/>
+<ellipse cx="90" cy="410" rx="60" ry="30" transform="rotate(20 90 410)"/>
+<ellipse cx="680" cy="70" rx="90" ry="46" transform="rotate(-25 680 70)"/>
+</g>
+<path d="M-10 330 C160 300 260 380 420 300 S660 220 770 250" fill="none" stroke="var(--bg)" stroke-width="12"/>
+<path d="M-10 330 C160 300 260 380 420 300 S660 220 770 250" fill="none" stroke="var(--accent)" stroke-width="2" stroke-dasharray="10 8"/>
+<path d="M300 -10 C330 120 380 170 400 230 S470 400 520 490" fill="none" stroke="var(--bg)" stroke-width="8"/>
+<g transform="translate(360 120)">
+<circle cx="40" cy="40" r="36" fill="none" stroke="var(--accent)" stroke-width="2" opacity=".45"><animate attributeName="r" values="22;40;22" dur="2.6s" repeatCount="indefinite"/></circle>
+<path d="M40 6C22 6 12 20 12 34c0 18 28 52 28 52s28-34 28-52C68 20 58 6 40 6Z" fill="var(--accent)" stroke="var(--ink)" stroke-width="3"/>
+<circle cx="40" cy="34" r="10" fill="var(--bg)"/>
+</g>
+</svg>
+<div class="tag"><b>The Roof</b><span>IBIS STYLES</span></div>
+</section>
+
+<section class="count" aria-live="off" aria-label="Countdown to the dinner">
+<div><b id="d">--</b><span>DAYS</span></div>
+<div><b id="h">--</b><span>HOURS</span></div>
+<div><b id="m">--</b><span>MINS</span></div>
+<div><b id="s">--</b><span>SECS</span></div>
+</section>
+
+<section class="legend" aria-label="Event details">
+<h2>LEGEND</h2>
+<div class="row"><span class="dot" style="background:var(--accent)"></span><div><small>Date</small><p>Saturday, 12 December</p></div></div>
+<div class="row"><span class="dot" style="background:var(--ochre)"></span><div><small>Time</small><p>From 5:00 PM</p></div></div>
+<div class="row"><span class="dot" style="background:var(--mauve)"></span><div><small>Dress code</small><p>Dress in warm, earthy colours.</p></div></div>
+<div class="row"><span class="dot" style="background:var(--ink)"></span><div><small>RSVP by</small><p>5 December</p></div></div>
+</section>
+
+<div class="btns">
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=The+Roof+Ibis+Styles" target="_blank" rel="noopener">Get directions</a>
+<a class="btn alt" id="cal" href="#" download="dinner.ics">Add to calendar</a>
+</div>
+
+<section class="rsvp" aria-label="RSVP">
+<h2>RSVP</h2>
+<form id="f" onsubmit="return false">
+<div style="display:flex;flex-direction:column;gap:14px">
+<div><label for="n">Your name</label><input id="n" type="text" autocomplete="name"></div>
+<div class="choice" role="group" aria-label="Attendance">
+<button type="button" class="alt" id="yes" aria-pressed="true">I’ll be there</button>
+<button type="button" class="alt" id="no" aria-pressed="false">Can’t make it</button>
+</div>
+
+<div><label for="note">Leave me a few heartfelt words</label><textarea id="note" rows="3" placeholder="A memory, some advice, or a wish for the next chapter"></textarea></div>
+<button type="submit" id="go">Send RSVP</button>
+</div>
+</form>
+<p id="done" hidden></p>
+<a class="btn" id="wa" href="#" target="_blank" rel="noopener" hidden>Send RSVP on WhatsApp</a>
+</section>
+</main>
+
+<script>
+(function(){
+var T=new Date('2026-12-12T17:00:00+03:00').getTime();
+function pad(x){return String(x).padStart(2,'0')}
+function tick(){var l=Math.max(0,T-Date.now());
+document.getElementById('d').textContent=Math.floor(l/864e5);
+document.getElementById('h').textContent=pad(Math.floor(l/36e5)%24);
+document.getElementById('m').textContent=pad(Math.floor(l/6e4)%60);
+document.getElementById('s').textContent=pad(Math.floor(l/1e3)%60)}
+tick();setInterval(tick,1000);
+
+var cal=document.getElementById('cal');
+var ics=['BEGIN:VCALENDAR','VERSION:2.0','BEGIN:VEVENT','DTSTART:20261212T140000Z','DTEND:20261212T200000Z','SUMMARY:Sakin’s Graduation and 23rd Birthday Dinner','LOCATION:The Roof\\, Ibis Styles','END:VEVENT','END:VCALENDAR'].join('\r\n');
+cal.href='data:text/calendar;charset=utf-8,'+encodeURIComponent(ics);
+
+var yes=document.getElementById('yes'),no=document.getElementById('no'),attending=true;
+function pick(v){attending=v;yes.setAttribute('aria-pressed',v);no.setAttribute('aria-pressed',!v)}
+yes.onclick=function(){pick(true)};no.onclick=function(){pick(false)};
+document.getElementById('go').onclick=function(){
+var n=document.getElementById('n').value.trim()||'friend';
+var d=document.getElementById('done');
+d.textContent='Almost done, '+n+'. Tap below to send your reply to Sakin on WhatsApp.';
+var note=document.getElementById('note').value.trim();var msg=attending?('Hi Sakin, this is '+n+'. I will be at your graduation and birthday dinner on 12 December.'+(note?' My message for you: '+note:'')):('Hi Sakin, this is '+n+'. Sorry, I can’t make it to your dinner on 12 December.');var wa=document.getElementById('wa');wa.href='https://wa.me/254115151539?text='+encodeURIComponent(msg);wa.hidden=false;d.hidden=false;document.getElementById('f').hidden=true;
+try{localStorage.setItem('rsvp',attending?'yes':'no')}catch(e){}};
+})();
+</script>
+</body>
+</html>
