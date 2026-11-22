@@ -3,53 +3,98 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
 <title>Sakin’s Graduation and 23rd Birthday Dinner</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#1C3738;--surface:#26494A;--ink:#F3EEE2;--muted:#8AA29E;--accent:#F6AE2D;--ochre:#F6AE2D;--olive:#8AA29E;--mauve:#8C5F66;--on-accent:#2F0601;
-box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-
-
-html{scroll-padding-top:env(safe-area-inset-top,0px)}
+/* Meliosta: drop the font file at ./assets/fonts/ (woff2 or otf). Until then Syne ExtraBold stands in. */
+@font-face{
+  font-family:'Meliosta';
+  src:local('Meliosta'),
+      url('./assets/fonts/Meliosta.woff2') format('woff2'),
+      url('./assets/fonts/Meliosta.otf') format('opentype');
+  font-style:normal;
+  font-weight:400;
+  font-display:swap
+}
+:root{
+  --bg:#020805;
+  --surface:rgba(2,10,6,.48);
+  --ink:#FFFFFF;
+  --muted:rgba(255,255,255,.72);
+  --accent:#C8D95A;
+  --accent-2:#D9DAB2;
+  --moss:#6F8F6A;
+  --on-accent:#07140A;
+  --line:rgba(255,255,255,.85);
+  --display:'Meliosta','Syne',system-ui,sans-serif;
+  --label:'Syne',system-ui,sans-serif;
+  color-scheme:dark;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);background:var(--bg)}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:'DM Sans',system-ui,sans-serif;line-height:1.5}
+body{margin:0;background:transparent;color:var(--ink);font-family:'DM Sans',system-ui,sans-serif;line-height:1.5;min-height:100vh;position:relative}
+
+/* Mesh gradient: lime/olive glow top-left, black centre and top-right, teal bottom-left, pale yellow-green glow bottom-right */
+body::before{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(55% 40% at 6% 4%,#C3D43F 0%,rgba(195,212,63,0) 70%),
+    radial-gradient(38% 45% at 0% 38%,#CFD887 0%,rgba(207,216,135,0) 72%),
+    radial-gradient(48% 38% at 30% 14%,#566B06 0%,rgba(86,107,6,0) 72%),
+    radial-gradient(55% 40% at 8% 100%,#2C5A4C 0%,rgba(44,90,76,0) 75%),
+    radial-gradient(50% 36% at 48% 82%,#20413C 0%,rgba(32,65,60,0) 72%),
+    radial-gradient(60% 40% at 94% 100%,#D9DAB2 0%,rgba(217,218,178,0) 72%),
+    radial-gradient(42% 34% at 88% 76%,#CCD673 0%,rgba(204,214,115,0) 72%),
+    #020805
+}
+
 .wrap{max-width:760px;margin:0 auto;padding:40px 20px 64px;display:flex;flex-direction:column;gap:32px}
-.eyebrow{font-size:13px;letter-spacing:.28em;font-weight:700;color:var(--accent)}
-h1{font-family:'Fraunces',Georgia,serif;font-weight:700;font-size:clamp(40px,9vw,68px);line-height:1.03;margin:8px 0 6px}
+.eyebrow{font-family:var(--label);font-size:12px;letter-spacing:.28em;font-weight:700;color:var(--accent);text-transform:uppercase;line-height:1.7}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(40px,9vw,72px);line-height:1.02;margin:12px 0 8px;letter-spacing:.01em}
 .guest{font-size:18px;margin:14px 0 0;color:var(--ink)}
-.host{font-family:'Fraunces',Georgia,serif;font-size:22px;color:var(--olive);margin:0}
-.map{position:relative;border:3px solid var(--ink);background:var(--surface);overflow:hidden;aspect-ratio:16/10}
+.host{font-family:var(--display);font-size:clamp(18px,4vw,24px);color:var(--accent-2);margin:0}
+
+.map{position:relative;border:2px solid var(--line);background:var(--surface);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);overflow:hidden;aspect-ratio:16/10}
 .map svg{position:absolute;inset:0;width:100%;height:100%}
 .tag{position:absolute;left:50%;top:62%;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 18px;text-align:center;white-space:nowrap}
-.tag b{font-family:'Fraunces',Georgia,serif;font-size:clamp(18px,4vw,24px);display:block}
-.tag span{font-size:12px;letter-spacing:.25em}
+.tag b{font-family:var(--display);font-weight:400;font-size:clamp(18px,4vw,26px);display:block}
+.tag span{font-family:var(--label);font-weight:700;font-size:11px;letter-spacing:.28em}
+
 .count{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;text-align:center}
-.count div{border:3px solid var(--ink);padding:14px 4px}
-.count b{display:block;font-family:'Fraunces',Georgia,serif;font-size:clamp(28px,7vw,44px);line-height:1}
-.count span{font-size:12px;letter-spacing:.2em;color:var(--muted)}
-.legend{border:3px solid var(--ink);padding:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.legend h2,.rsvp h2{grid-column:1/-1;margin:0;font-size:13px;letter-spacing:.28em;color:var(--accent)}
+.count div{border:2px solid var(--line);padding:14px 4px;background:var(--surface);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.count b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(28px,7vw,46px);line-height:1.1}
+.count span{font-family:var(--label);font-weight:700;font-size:11px;letter-spacing:.24em;color:var(--muted)}
+
+.legend{border:2px solid var(--line);padding:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;background:var(--surface);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.legend h2,.rsvp h2{grid-column:1/-1;margin:0;font-family:var(--label);font-size:12px;letter-spacing:.3em;color:var(--accent)}
 .row{display:flex;gap:12px;align-items:center}
 .dot{width:20px;height:20px;border-radius:50%;flex:none}
-.row small{display:block;font-weight:700}
-.row p{margin:0;font-family:'Fraunces',Georgia,serif;font-size:21px}
+.row small{display:block;font-family:var(--label);font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.row p{margin:0;font-family:var(--display);font-size:19px;line-height:1.25}
+
 .btns{display:flex;flex-wrap:wrap;gap:12px}
-a.btn,button{font:inherit;font-weight:700;min-height:48px;padding:12px 22px;border:3px solid var(--accent);background:var(--accent);color:var(--on-accent);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center}
-a.btn.alt,button.alt{background:transparent;color:var(--ink);border-color:var(--ink)}
-.rsvp{border:3px solid var(--ink);padding:22px;display:flex;flex-direction:column;gap:14px;background:var(--surface)}
-label{font-weight:700;font-size:14px}
-input[type=text],input[type=number],textarea{font:inherit;width:100%;min-height:48px;padding:10px 12px;border:3px solid var(--ink);background:var(--bg);color:var(--ink)}
+a.btn,button{font:inherit;font-family:var(--label);font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;min-height:48px;padding:12px 22px;border:2px solid var(--accent);background:var(--accent);color:var(--on-accent);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center}
+a.btn.alt,button.alt{background:transparent;color:var(--ink);border-color:var(--line)}
+a.btn:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--accent-2);outline-offset:2px}
+
+.rsvp{border:2px solid var(--line);padding:22px;display:flex;flex-direction:column;gap:14px;background:var(--surface);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+label{font-family:var(--label);font-weight:700;font-size:12px;letter-spacing:.2em;text-transform:uppercase}
+input[type=text],input[type=number],textarea{font:inherit;width:100%;min-height:48px;padding:10px 12px;border:2px solid var(--line);background:rgba(2,8,5,.55);color:var(--ink);margin-top:6px}
+input::placeholder,textarea::placeholder{color:rgba(255,255,255,.5)}
 .choice{display:flex;gap:10px;flex-wrap:wrap}
 .choice button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
-#done{font-family:'Fraunces',Georgia,serif;font-size:24px;margin:0}
+#done{font-family:var(--display);font-size:22px;margin:0}
 [hidden]{display:none!important}
 </style>
 </head>
 <body>
 <main class="wrap">
 <header>
-<div class="eyebrow">TO A PERSON OF RARE TASTE AND IMPECCABLE JUDGMENT: YOU ARE INVITED TO MY GRADUATION AND 23RD BIRTHDAY</div>
+<div class="eyebrow">To a person of rare taste and impeccable judgment: you are invited to my graduation and 23rd birthday</div>
 <h1>Two celebrations, one night.</h1>
 <p class="host">Efficiency is also on my CV.</p>
 
@@ -57,13 +102,13 @@ input[type=text],input[type=number],textarea{font:inherit;width:100%;min-height:
 
 <section class="map" aria-label="Map showing the venue">
 <svg viewBox="0 0 760 475" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-<g fill="none" stroke="var(--ochre)" stroke-width="1.6" opacity=".7">
+<g fill="none" stroke="var(--accent)" stroke-width="1.6" opacity=".7">
 <ellipse cx="400" cy="230" rx="330" ry="190" transform="rotate(-14 400 230)"/>
 <ellipse cx="400" cy="230" rx="260" ry="145" transform="rotate(-14 400 230)"/>
 <ellipse cx="400" cy="230" rx="190" ry="100" transform="rotate(-14 400 230)"/>
 <ellipse cx="400" cy="230" rx="120" ry="58" transform="rotate(-14 400 230)"/>
 </g>
-<g fill="none" stroke="var(--olive)" stroke-width="1.2" opacity=".55">
+<g fill="none" stroke="var(--accent-2)" stroke-width="1.2" opacity=".55">
 <ellipse cx="90" cy="410" rx="110" ry="60" transform="rotate(20 90 410)"/>
 <ellipse cx="90" cy="410" rx="60" ry="30" transform="rotate(20 90 410)"/>
 <ellipse cx="680" cy="70" rx="90" ry="46" transform="rotate(-25 680 70)"/>
@@ -90,8 +135,8 @@ input[type=text],input[type=number],textarea{font:inherit;width:100%;min-height:
 <section class="legend" aria-label="Event details">
 <h2>LEGEND</h2>
 <div class="row"><span class="dot" style="background:var(--accent)"></span><div><small>Date</small><p>Saturday, 12 December</p></div></div>
-<div class="row"><span class="dot" style="background:var(--ochre)"></span><div><small>Time</small><p>From 5:00 PM</p></div></div>
-<div class="row"><span class="dot" style="background:var(--mauve)"></span><div><small>Dress code</small><p>Dress in warm, earthy colours.</p></div></div>
+<div class="row"><span class="dot" style="background:var(--accent-2)"></span><div><small>Time</small><p>From 5:00 PM</p></div></div>
+<div class="row"><span class="dot" style="background:var(--moss)"></span><div><small>Dress code</small><p>Dress in warm, earthy colours.</p></div></div>
 <div class="row"><span class="dot" style="background:var(--ink)"></span><div><small>RSVP by</small><p>5 December</p></div></div>
 </section>
 
