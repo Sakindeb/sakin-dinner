@@ -96,6 +96,7 @@ body.lock{overflow:hidden}
 .gallery::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,rgba(2,8,5,0) 45%,rgba(2,8,5,.85) 100%)}
 .g-top{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;padding:calc(18px + env(safe-area-inset-top,0px)) 20px 0}
 .g-title{font-family:var(--label);font-weight:700;font-size:12px;letter-spacing:.3em;color:var(--accent);text-transform:uppercase}
+.g-statement{position:relative;z-index:2;margin:6px auto 0;padding:0 24px;max-width:680px;text-align:center;font-family:var(--display);font-size:clamp(18px,4.6vw,30px);line-height:1.25;color:var(--ink)}
 .g-stage{position:relative;flex:1;min-height:0;perspective:1100px;touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none;overflow:hidden}
 .g-stage.drag{cursor:grabbing}
 .g-ring{position:absolute;inset:0;transform-style:preserve-3d}
@@ -186,6 +187,7 @@ button.g-nav{min-width:48px;padding:12px 14px;font-size:18px;letter-spacing:0}
 
 <div class="gallery" id="gallery" role="dialog" aria-modal="true" aria-label="Photo gallery" hidden>
 <div class="g-top"><span class="g-title">Gallery</span><button type="button" class="alt" id="g-close">Close</button></div>
+<p class="g-statement">Some visuals of my favorite memories with you, and most of them live in my mind.</p>
 <div class="g-stage" id="g-stage"><div class="g-ring" id="g-ring" role="list"></div></div>
 <div class="g-bottom"><button type="button" class="alt g-nav" id="g-prev" aria-label="Previous photo">&larr;</button><span class="g-hint">Drag to spin</span><button type="button" class="alt g-nav" id="g-next" aria-label="Next photo">&rarr;</button></div>
 </div>
@@ -217,10 +219,19 @@ try{localStorage.setItem('rsvp',attending?'yes':'no')}catch(e){}};
 })();
 
 /* ---------- Gallery (3D ring) ----------
-   Add your photos to ./assets/gallery/ and list them here, in the order you want. */
+   Photos live in ./assets/gallery/. List them here in the order you want. */
 var GALLERY_PHOTOS=[
-  // 'assets/gallery/01.jpg',
-  // 'assets/gallery/02.jpg',
+  'assets/gallery/lizdebs.jpg',
+  'assets/gallery/max.jpg',
+  'assets/gallery/cheryl.jpg',
+  'assets/gallery/lizxdeb.jpg',
+  'assets/gallery/danxleny.jpg',
+  'assets/gallery/liz.jpg',
+  'assets/gallery/lizxleny.jpg',
+  'assets/gallery/mwaka.jpg',
+  'assets/gallery/danxliz.jpg',
+  'assets/gallery/kiki.jpg',
+  'assets/gallery/joseph.jpg'
 ];
 (function(){
 var ov=document.getElementById('gallery'),stage=document.getElementById('g-stage'),ring=document.getElementById('g-ring');
